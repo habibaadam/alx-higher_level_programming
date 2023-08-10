@@ -1,19 +1,18 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
     import sys
 
-    argument = sys.argv
-    length = len(argument) - 1
+    arg = sys.argv
+    s = len(arg) - 1
 
-    if length > 1:
-        print("{} arguments:".format(length))
-        for h in range(1, length + 1):
-            print("{}: {}".format(h, argument[h]))
+    if s > 1:
+        print("{} arguments:".format(s))
+        for h in range(1, s + 1):
+            print("{}: {}".format(h, arg[h]))
 
-    elif length == 0:
-        print("{} arguments.".format(length))
+    elif s == 0:
+        print("{} arguments.".format(s))
 
     else:
-        print("{} arguments.".format(length))
-        print("{}: {}".format(length, argument[1]))
+        print("{} argument:".format(s))
+        print("{}: {}".format(s, arg[1]))
