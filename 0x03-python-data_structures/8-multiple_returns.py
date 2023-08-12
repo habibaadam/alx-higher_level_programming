@@ -5,8 +5,5 @@ def multiple_returns(sentence):
     If the sentence is empty, the first character should be equal to None
     """
     if sentence == "":
-        return(0, None)
-    """
-    return a tuple with the length of a string and its first character.
-    """
+        return (0, None)
     return (len(sentence), sentence[0])
