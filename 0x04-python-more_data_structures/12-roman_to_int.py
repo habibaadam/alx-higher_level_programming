@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def roman_to_int(roman_string):
     if not roman_string or not isinstance(roman_string, str):
         return 0
@@ -12,12 +11,12 @@ def roman_to_int(roman_string):
     res = 0
     old_val = 0
 
-    for character in reversed(roman_string):
-        val = roman_val.get(character, 0)
+    for symbol in reversed(roman_string):
+        val = roman_val.get(symbol, 0)
         if val >= old_val:
             res += val
         else:
             res -= val
-            old_val = val
+        old_val = val
 
-        return res
+    return res
