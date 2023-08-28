@@ -17,7 +17,7 @@ def safe_print_list_integers(my_list=[], x=0):
     counter = 0
     for h in range(0, x):
         try:
-            print("{}".format(my_list[h]), end="")
+            print("{:d}".format(my_list[h]), end="")
             counter += 1
         except (ValueError, TypeError):
             continue
