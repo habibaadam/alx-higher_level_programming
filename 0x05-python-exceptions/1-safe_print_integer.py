@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 A function that prints an integer with "{:d}".format()
 value can be any type (integer, string, etc.)
