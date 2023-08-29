@@ -22,19 +22,14 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-    def area(self):
-        """area of the square."""
-        return (self.__size * self.__size)
-
-    def __eq__(self, other):
         """Define the == comparision"""
         return self.area() == other.area()
 
     def __ne__(self, other):
-        """Define the != comparison """
+        """Define the != comparison"""
         return self.area() != other.area()
 
-    def __le__(self, other):
+    def __lt__(self, other):
         """Define the < comparison"""
         return self.area() < other.area()
 
