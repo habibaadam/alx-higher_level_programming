@@ -1,2 +1,3 @@
-#Starting Higher Level Programming
-:) Updating information later.
+##Starting Higher Level Programming
+
+<b>Updating information later</b>
