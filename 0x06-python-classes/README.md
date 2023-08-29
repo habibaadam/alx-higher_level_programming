@@ -1,1 +1,1 @@
-Introduction to Python Oject Oriented Programming
+Introduction to Python Object Oriented Programming
