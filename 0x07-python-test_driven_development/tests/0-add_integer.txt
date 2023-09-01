@@ -64,6 +64,12 @@ Case Nan:
         ...
         ValueError: cannot convert float NaN to integer
 
+
+Infinity Tests
+=================
+
+``add_integer()`` fails when infinity is passed as an argument to it.
+
 Case Overflow:
 
         >>> add_integer(float('inf'), 0)
