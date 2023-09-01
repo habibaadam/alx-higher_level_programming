@@ -5,8 +5,7 @@ Usage
 ------
 
 From the module, importing ``add_integer'':
-        >>> add_integer =
-	__import__('0-add_integer').add_integer
+        >>> add_integer =__import__('0-add_integer').add_integer
 
 Addition of 1 and 2 as two integers
         >>> add_integer(1, 2)
@@ -28,7 +27,7 @@ Non-Digits
 =============
 
 ``add_integer()`` expects both arguments to be either integers
-  or floating point arguments
+or floating point arguments
 
 Addition of an int and a string
         >>> add_integer(4, "School")
