@@ -91,6 +91,18 @@ Passing a second matrix with row having unequal size
     ...
     TypeError: each row of m_a must be of the same size
 
+    >>> matrix_mul([[2, 2, 2], [4, 4, 4]], [[2], [3, 3]])
+    Traceback (most recent call last):
+    ...
+    TypeError: each row of m_b must be of the same size
+
+Passing two matrix that can't be multiplied
+
+    >>> matrix_mul([[5, 2, 3], [7, 13, 2], [1, 0, 3]], [[2, 3], [6, 9]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a and m_b can't be multiplied
+
 Passing empty matrix as first argument
     >>> matrix_mul([], [[2, 8]])
     Traceback (most recent call last):
