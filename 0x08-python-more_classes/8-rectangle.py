@@ -74,21 +74,16 @@ class Rectangle:
         Args:
         rect_1: first rectangle
         rect_2: second rectangle
-
-        Returns:
-        the rectangle with the greatest area
-
         Raises:
         TypeError: if either rect_1 or rect_2 are not rectangles
-
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_2.area() >= rect_1.area():
-            return rect_2
-        return rect_1
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
 
     def __str__(self):
         """Printing representation of the rectangle, but with #"""
