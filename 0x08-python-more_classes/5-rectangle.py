@@ -77,3 +77,7 @@ class Rectangle:
         rectangle_rows = "Rectangle(" + str(self.__width)
         rectangle_rows += ", " + str(self.__height) + ")"
         return rectangle_rows
+
+    def __del__(self):
+        """ Prints a message when an instance of rectangle is deleted"""
+        print("Bye rectangle...")
