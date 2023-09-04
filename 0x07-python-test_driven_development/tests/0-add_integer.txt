@@ -57,6 +57,18 @@ Adding an int and a list
         ...
         TypeError: b must be an integer
 
+Adding a char and a number
+        >>> add_integer('h', 1)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+Passing both arguments as chars
+        >>> add_integer('7', 'h')
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
 Case Nan:
 
         >>> add_integer(0, float('nan'))
