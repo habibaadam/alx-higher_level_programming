@@ -7,6 +7,16 @@ Usage
 From the module, importing ``add_integer'':
         >>> add_integer =__import__('0-add_integer').add_integer
 
+Checking for existence of module docstring
+        >>> a = __import__("0-add_integer").__doc__
+        >>> len(a) > 1
+        True
+
+Checking for existence of function docstring
+        >>> h = __import__('0-add_integer').add_integer.__doc__
+        >>> len(h) > 1
+        True
+
 Addition of 1 and 2 as two integers
         >>> add_integer(1, 2)
         3
@@ -26,6 +36,10 @@ Substraction of 100.3 and 2
 Adding Two Floats 2.5, 2.3
         >>> add_integer(2.3, 2.5)
         4
+
+Adding very long int
+        >>> add_integer(777777777777, 3)
+        777777777780
 
 Non-Digits
 =============
