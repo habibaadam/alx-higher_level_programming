@@ -109,7 +109,7 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Method that assigns arguments to each attribute
         Args:
@@ -120,6 +120,7 @@ class Rectangle(Base):
         - fourth argument represents the x attribute
         - fifth argument represents the y attribute
 
+        kwargs: represents args with a key = value format
         """
 
         if args and len(args) != 0:
@@ -139,3 +140,23 @@ class Rectangle(Base):
                 elif g == 4:
                     self.y = arg
                 g += 1
+
+        elif kwargs and len(kwargs) != 0:
+            """ assigning a key/value argument to attributes
+            -   Argument order is not important.
+            """
+
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
