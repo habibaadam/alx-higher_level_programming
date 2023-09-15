@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Defining a base class"""
 import json
+import turtle
 import csv
+
 
 class Base:
     """Representing the base class
@@ -78,6 +80,7 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Write the CSV serialization of a list of objects to a file.
@@ -121,3 +124,50 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+         staticmethod that opens a window and
+         draws all the Rectangles and Squares:
+
+         Args:
+         list_rectangles: a list of rectangle objects drawn
+         list_squares: a lost of square objects to be drawn
+
+        """
+        t_draw = turtle.Turtle()
+        """Setting background color to dark gray"""
+        t_draw.screen.bgcolor("#333333")
+        """Setting thickness of the line"""
+        t_draw.pensize(4)
+        t_draw.shape("turtle")
+
+        t_draw.color('black', 'purple')
+        for rect in list_rectangles:
+            t_draw.showturtle()
+            t_draw.up()
+            t_draw.goto(rect.x, rect.y)
+            t_draw.down()
+            for h in range(2):
+                t_draw.forward(rect.width)
+                t_draw.left(90)
+                t_draw.forward(rect.height)
+                t_draw.left(90)
+            t_draw.hideturtle()
+
+        """Drawing the squares"""
+        t_draw.color('green', 'yellow')
+        for sqr in list_squares:
+            t_draw.showturtle()
+            t_draw.up()
+            t_draw.goto(sqr.x, sqr.y)
+            t_draw.down()
+            for m in range(2):
+                t_draw.forward(sqr.width)
+                t_draw.left(90)
+                t_draw.forward(sqr.height)
+                t_draw.left(90)
+            t_draw.hideturtle()
+
+        turtle.exitonclick()
