@@ -10,7 +10,7 @@ Unittest classes:
                  Testrectangle_y - Line 330
                  Testrectangle_order_of_init - Line 397
                  Testrectangle_area - Line 421
-                 Testrecatangle_str_display - Line
+                 Testrecatangle_str_display - Line 444
                  Testrectangle_updating_args -
                  Test_rectangle_updating_kwargs -
                  Testrectangle_to_dict -
