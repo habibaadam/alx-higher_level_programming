@@ -8,7 +8,7 @@ Unittest classes:
                  Testrectangle_height - Line 187
                  Testrectangle_x - Line 259
                  Testrectangle_y - Line 330
-                 Testrectangle_order_of_init -
+                 Testrectangle_order_of_init - Line 397
                  Testrectangle_area -
                  Testrectangle_updating_args -
                  Test_rectangle_updating_kwargs -
