@@ -9,7 +9,8 @@ Unittest classes:
                  Testrectangle_x - Line 259
                  Testrectangle_y - Line 330
                  Testrectangle_order_of_init - Line 397
-                 Testrectangle_area -
+                 Testrectangle_area - Line 421
+                 Testrecatangle_str_display - Line
                  Testrectangle_updating_args -
                  Test_rectangle_updating_kwargs -
                  Testrectangle_to_dict -
@@ -418,8 +419,34 @@ class Testrectangle_order_of_init(unittest.TestCase):
             Rectangle(1, 2, "invalid x", "invalid y")
 
 
+class Testrectangle_area(unittest.TestCase):
+    """Testing area attribute of the class rectangle"""
+    
+    def testing_small_area(self):
+        rect = Rectangle(10, 2, 1, 1, 1)
+        self.assertEqual(20, rect.area())
 
-        
+    def testing_large_area(self):
+        rect = Rectangle(999999999999999, 999999999999999999, 0, 0, 1)
+        self.assertEqual(999999999999998999000000000000001, rect.area())
+
+    def test_area_changed_attr(self):
+        rect = Rectangle(2, 10, 1, 1, 2)
+        rect.width = 7
+        rect.height = 3
+        self.assertEqual(21, rect.area())
+
+    def testing_area_one_arg(self):
+        rect = Rectangle(2, 5, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            rect.area(1)
+
+class Testrecatangle_str_display(unittest.TestCase):
+    """Unittests for str method and display method"""
+    
+
+
+
 
 
 
