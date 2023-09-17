@@ -10,10 +10,10 @@ Unittest classes:
                  Testrectangle_y - Line 330
                  Testrectangle_order_of_init - Line 397
                  Testrectangle_area - Line 421
-                 Testrecatangle_str_display - Line 444
-                 Testrectangle_updating_args -
-                 Test_rectangle_updating_kwargs -
-                 Testrectangle_to_dict -
+                 Testrectangle_str_display - Line 444
+                 Testrectangle_updating_args - Line 528
+                 Test_rectangle_updating_kwargs - Line 665
+                 Testrectangle_to_dict - Line 777
 
 """
 
@@ -662,7 +662,7 @@ class Testrectangle_updating_args(unittest.TestCase):
             r.update(89, 1, 2, "invalid", "invalid")
 
 
-class TestRectangle_update_kwargs(unittest.TestCase):
+class Testrectangle_updating_kwargs(unittest.TestCase):
     """Unittests for testing update kwargs method of the Rectangle class."""
 
     def test_update_kwargs_one(self):
@@ -774,7 +774,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
         self.assertEqual("[Rectangle] (89) 19/7 - 10/5", str(r))
 
 
-class TestRectangle_to_dictionary(unittest.TestCase):
+class Testrectangle_to_dict(unittest.TestCase):
     """Unittests for testing to_dictionary method of the Rectangle class."""
 
     def test_to_dictionary_output(self):
