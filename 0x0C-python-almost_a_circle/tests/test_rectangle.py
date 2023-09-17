@@ -394,7 +394,7 @@ class Testrectangle_y(unittest.TestCase):
     def test_negative_y(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(3, 5, 0, -1)
-   
+
 class Testrectangle_order_of_init(unittest.TestCase):
     """Testing order of attribute initalization"""
 
@@ -421,7 +421,7 @@ class Testrectangle_order_of_init(unittest.TestCase):
 
 class Testrectangle_area(unittest.TestCase):
     """Testing area attribute of the class rectangle"""
-    
+
     def testing_small_area(self):
         rect = Rectangle(10, 2, 1, 1, 1)
         self.assertEqual(20, rect.area())
@@ -441,9 +441,89 @@ class Testrectangle_area(unittest.TestCase):
         with self.assertRaises(TypeError):
             rect.area(1)
 
-class Testrecatangle_str_display(unittest.TestCase):
+class Testrectangle_str_display(unittest.TestCase):
     """Unittests for str method and display method"""
-    
+
+    @staticmethod
+    def output(rect, method):
+        """outputs and returns text printed to stdout.
+
+        Args:
+            rect (Rectangle): The Rectangle to print to stdout.
+            method (str): The method to run on rect.
+        Returns:
+            The text printed to stdout by calling method on sq.
+        """
+        output = io.StringIO()
+        sys.stdout = output
+        if method == "print":
+            print(rect)
+        else:
+            rect.display()
+        sys.stdout = sys.__stdout__
+        return output
+
+    #Tests for str method as follows
+    def test_str_print_w_and_h(self):
+        rect = Rectangle(4, 8)
+        output = Testrectangle_str_display.output(rect, "print")
+        expected = "[Rectangle] ({}) 0/0 - 4/8\n".format(rect.id)
+        self.assertEqual(expected, output.getvalue())
+
+    def test_str_method_width_height_x(self):
+        rect = Rectangle(5, 5, 1)
+        expected = "[Rectangle] ({}) 1/0 - 5/5".format(rect.id)
+        self.assertEqual(expected, rect.__str__())
+
+    def test_str_method_width_height_x_y(self):
+        rect = Rectangle(1, 8, 2, 4)
+        expected = "[Rectangle] ({}) 2/4 - 1/8".format(rect.id)
+        self.assertEqual(expected, str(rect))
+
+    def test_str_method_width_height_x_y_id(self):
+        rect = Rectangle(13, 21, 2, 4, 7)
+        self.assertEqual("[Rectangle] (7) 2/4 - 13/21", str(rect))
+
+    def test_str_method_changed_attributes(self):
+        rect = Rectangle(7, 7, 0, 0, [4])
+        rect.width = 15
+        rect.height = 1
+        rect.x = 8
+        rect.y = 10
+        self.assertEqual("[Rectangle] ([4]) 8/10 - 15/1", str(rect))
+
+    def test_str_method_one_arg(self):
+        rect = Rectangle(1, 2, 3, 4, 5)
+        with self.assertRaises(TypeError):
+            rect.__str__(1)
+
+    # Test display method
+    def test_display_width_height(self):
+        rect = Rectangle(2, 3, 0, 0, 0)
+        output= Testrectangle_str_display.output(rect, "display")
+        self.assertEqual("##\n##\n##\n", output.getvalue())
+
+    def test_display_width_height_x(self):
+        rect = Rectangle(3, 2, 1, 0, 1)
+        output= Testrectangle_str_display.output(rect, "display")
+        self.assertEqual("###\n###\n", output.getvalue())
+
+    def test_display_width_height_y(self):
+        rect= Rectangle(4, 5, 0, 1, 0)
+        output= Testrectangle_str_display.output(rect, "display")
+        display = "\n####\n####\n####\n####\n####\n"
+        self.assertEqual(display, output.getvalue())
+
+    def test_display_width_height_x_y(self):
+        rect = Rectangle(2, 4, 3, 2, 0)
+        output= Testrectangle_str_display.output(rect, "display")
+        display = "\n\n##\n##\n##\n##\n"
+        self.assertEqual(display, output.getvalue())
+
+    def test_display_one_arg(self):
+        rect = Rectangle(5, 1, 2, 4, 7)
+        with self.assertRaises(TypeError):
+            rect.display(1)
 
 
 
