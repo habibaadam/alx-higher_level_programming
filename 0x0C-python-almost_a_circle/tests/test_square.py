@@ -404,7 +404,7 @@ class TestSquare_stdout(unittest.TestCase):
     def test_display_size_x(self):
         s = Square(3, 1, 0, 18)
         capture = TestSquare_stdout.capture_stdout(s, "display")
-        self.assertEqual("###\n###\n###\n", capture.getvalue())
+        self.assertEqual(" ###\n ###\n ###\n", capture.getvalue())
 
     def test_display_size_y(self):
         s = Square(4, 0, 1, 9)
@@ -415,7 +415,7 @@ class TestSquare_stdout(unittest.TestCase):
     def test_display_size_x_y(self):
         s = Square(2, 3, 2, 1)
         capture = TestSquare_stdout.capture_stdout(s, "display")
-        display = "\n\n##\n##\n"
+        display = "\n\n   ##\n   ##\n"
         self.assertEqual(display, capture.getvalue())
 
     def test_display_one_arg(self):

@@ -90,14 +90,14 @@ class Rectangle(Base):
     def display(self):
         """Displays the rectangle with the '#' character"""
         if self.width == 0 or self.height == 0:
-            print()
+            print("")
             return
 
         [print("") for y in range(self.y)]
-        for row in range(self.height):
-            [print("", end="") for x in range(self.x)]
-            [print("#", end="") for h in range(self.width)]
-            print()
+        for h in range(self.height):
+            [print(" ", end="") for x in range(self.x)]
+            [print("#", end="") for w in range(self.width)]
+            print("")
 
     def __str__(self):
         """Override string representation of the class

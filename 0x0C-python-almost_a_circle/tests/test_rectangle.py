@@ -506,7 +506,8 @@ class Testrectangle_str_display(unittest.TestCase):
     def test_display_width_height_x(self):
         rect = Rectangle(3, 2, 1, 0, 1)
         output= Testrectangle_str_display.output(rect, "display")
-        self.assertEqual("###\n###\n", output.getvalue())
+        self.assertEqual(" ###\n ###\n", output.getvalue())
+
 
     def test_display_width_height_y(self):
         rect= Rectangle(4, 5, 0, 1, 0)
@@ -517,8 +518,9 @@ class Testrectangle_str_display(unittest.TestCase):
     def test_display_width_height_x_y(self):
         rect = Rectangle(2, 4, 3, 2, 0)
         output= Testrectangle_str_display.output(rect, "display")
-        display = "\n\n##\n##\n##\n##\n"
+        display = "\n\n   ##\n   ##\n   ##\n   ##\n"
         self.assertEqual(display, output.getvalue())
+
 
     def test_display_one_arg(self):
         rect = Rectangle(5, 1, 2, 4, 7)
