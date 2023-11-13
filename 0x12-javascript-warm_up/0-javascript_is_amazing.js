@@ -1,3 +1,3 @@
-#!/usr/bin/env node
+#!/usr/local/bin/node
 const myVar = 'Javascript is amazing';
 console.log(myVar);
