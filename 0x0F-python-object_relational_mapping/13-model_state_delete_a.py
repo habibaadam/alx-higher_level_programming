@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 a script that deletes State object with an 'a' from the database hbtn_0e_6_usa
 """
