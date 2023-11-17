@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-a script that lists first State object from the database hbtn_0e_6_usa
+a script that lists State object with an 'a' from the database hbtn_0e_6_usa
 """
 import sys
 from sqlalchemy import create_engine
@@ -23,9 +23,9 @@ if __name__ == "__main__":
         pool_pre_ping=True
     )
     session = Session(engine)
-    first_state = session.query(State).order_by(State.id).first()
-    if first_state is None:
-        print("Nothing")
-    else:
-        print("{}: {}".format(first_state.id, first_state.name))
-    session.close
+    letter = '%a%'
+    letter_match = session.query(State).filter(
+        State.name.like(letter)).order_by(State.id)
+    for h in letter_match:
+        print("{}: {}".format(h.id, h.name))
+    session.close()
