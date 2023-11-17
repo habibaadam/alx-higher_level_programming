@@ -14,6 +14,8 @@ if __name__ == "__main__":
     and then the database as the third argument
     """
 
+
+if __name__ == "__main__":
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
         .format(
@@ -23,9 +25,7 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True
     )
-
-session = Session(engine)
-for state in session.query(State).order_by(State.id).all():
-    print("{}: {}".format(state.id, state.name))
-
-session.close()
+    session = Session(engine)
+    for state in session.query(State).order_by(State.id).all():
+        print("{}: {}".format(state.id, state.name))
+    session.close()
