@@ -24,12 +24,10 @@ if __name__ == "__main__":
     session = Session()
 
     """ Querying all State objects and corresponding City objects """
-    query_result = session.query(State, City).join(
-        City).order_by(State.id, City.id).all()
-    
+    query_result = session.query(State).all()
 
     """Displaying the results"""
-    for state, city in query_result:
+    for state in query_result:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
