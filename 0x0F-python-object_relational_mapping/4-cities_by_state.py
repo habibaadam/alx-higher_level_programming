@@ -15,7 +15,8 @@ def main():
     )
 
     cursor = conn.cursor()
-    query = """SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.state_id=states.id"""
+    query = """SELECT cities.id, cities.name, states.name
+    FROM cities INNER JOIN states ON cities.state_id=states.id"""
     cursor.execute(query)
     cities = cursor.fetchall()
     for h in cities:

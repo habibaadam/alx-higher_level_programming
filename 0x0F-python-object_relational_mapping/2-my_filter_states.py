@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""A script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument."""
+"""A script that takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument."""
 import sys
 import MySQLdb
 
@@ -16,7 +17,8 @@ def main():
 
     cursor = conn.cursor()
     search = sys.argv[4]
-    query = """SELECT * FROM states WHERE name = '{:s}' ORDER BY id ASC""".format(search)
+    query = """SELECT * FROM states WHERE name =
+    '{:s}' ORDER BY id ASC""".format(search)
     cursor.execute(query)
     states = cursor.fetchall()
     for h in states:

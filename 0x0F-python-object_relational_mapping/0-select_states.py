@@ -3,6 +3,7 @@
 import sys
 import MySQLdb
 
+
 def main():
     conn = MySQLdb.connect(
         host="localhost",
@@ -21,6 +22,7 @@ def main():
         print(h)
     cursor.close()
     conn.close()
+
 
 if __name__ == '__main__':
     main()
