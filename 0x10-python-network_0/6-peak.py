@@ -2,8 +2,10 @@
 """Function that finds the peak in an unsorted list"""
 
 def find_peak(list_of_integers):
-    """Function that takes a list and returns
-       the peak number of that list
+    """
+    Args:
+        list_of_integers(int): list of integers to find peak of
+    Returns: peak of list_of_integers or None
     """
     size = len(list_of_integers)
     mid_e = size
