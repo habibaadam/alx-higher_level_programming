@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 A python script that lists the 10 most recent commits from a repository
 """
